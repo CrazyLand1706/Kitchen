@@ -74,17 +74,29 @@
             display: none; /* Відео спочатку приховано */
         }
 
+        /* Завдання */
         .task {
             margin-top: 30px;
             text-align: left;
             font-size: 18px;
             color: #fff;
+            background-color: rgba(0, 0, 0, 0.8); /* Темніша основа для контенту */
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #FFD700; /* Золоті акценти */
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Золотисте сяйво */
         }
 
         .task h3 {
-            font-size: 22px;
+            font-size: 26px;
             margin-bottom: 15px;
             color: #FFD700; /* Золотий колір для акценту */
+        }
+
+        .task h4 {
+            font-size: 22px;
+            margin-top: 15px;
+            color: #FFD700; /* Золотий акцент */
         }
 
         .task ul {
@@ -96,6 +108,12 @@
             margin: 10px 0;
             font-size: 18px;
         }
+
+        .task p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
     </style>
 </head>
 <body>
@@ -107,7 +125,7 @@
     <input type="password" id="password" placeholder="Пароль">
     <button onclick="checkPassword()">Відкрити завдання</button>
 
-    <!-- Вбудоване відео YouTube -->
+    <!-- Відео YouTube -->
     <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=1&modestbranding=1" allowfullscreen></iframe>
 
     <div class="task" id="task" style="display: none;">
