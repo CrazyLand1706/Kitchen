@@ -66,12 +66,25 @@
             border-radius: 5px;
         }
 
-        iframe {
+        /* Адаптивне відео */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Відношення сторін для відео (16:9) */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
             width: 100%;
-            height: 450px;
-            border: none;
             margin-top: 20px;
-            display: none; /* Відео спочатку приховано */
+            display: none;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Завдання */
@@ -125,8 +138,10 @@
     <input type="password" id="password" placeholder="Пароль">
     <button onclick="checkPassword()">Відкрити завдання</button>
 
-    <!-- Відео YouTube -->
-    <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=1&modestbranding=1" allowfullscreen></iframe>
+    <!-- Контейнер для відео -->
+    <div class="video-container" id="video-container">
+        <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=1&modestbranding=1" allowfullscreen></iframe>
+    </div>
 
     <div class="task" id="task" style="display: none;">
         <h3>Тиждень 1: “Командний Коктейль”</h3>
@@ -151,7 +166,7 @@
         var enteredPassword = document.getElementById('password').value;
         if (enteredPassword === '1234') {
             document.getElementById('task').style.display = 'block';  // Показуємо завдання
-            document.getElementById('video').style.display = 'block'; // Показуємо відео
+            document.getElementById('video-container').style.display = 'block'; // Показуємо відео
             document.body.style.filter = 'none'; // Знімаємо замилення фону після правильного паролю
         } else {
             alert('Невірний пароль. Спробуйте ще раз!');
