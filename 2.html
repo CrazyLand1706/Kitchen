@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Квест на навчання</title>
     <style>
-        /* Задаємо фон */
+        /* Розмивання фону */
         .background {
             position: absolute;
             top: 0;
@@ -71,7 +71,7 @@
             height: 450px;
             border: none;
             margin-top: 20px;
-            display: none;
+            display: none; /* Відео спочатку приховано */
         }
 
         .task {
@@ -107,6 +107,7 @@
     <input type="password" id="password" placeholder="Пароль">
     <button onclick="checkPassword()">Відкрити завдання</button>
 
+    <!-- Вбудоване відео YouTube -->
     <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=1&modestbranding=1" allowfullscreen></iframe>
 
     <div class="task" id="task" style="display: none;">
@@ -131,8 +132,9 @@
     function checkPassword() {
         var enteredPassword = document.getElementById('password').value;
         if (enteredPassword === '1234') {
-            document.getElementById('task').style.display = 'block';
-            document.body.style.filter = 'none'; // Знімає замилення фону після правильного паролю
+            document.getElementById('task').style.display = 'block';  // Показуємо завдання
+            document.getElementById('video').style.display = 'block'; // Показуємо відео
+            document.body.style.filter = 'none'; // Знімаємо замилення фону після правильного паролю
         } else {
             alert('Невірний пароль. Спробуйте ще раз!');
         }
