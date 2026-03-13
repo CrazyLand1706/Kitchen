@@ -18,7 +18,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            filter: blur(4px); /* Замилює фон */
         }
         .content {
             padding: 30px;
@@ -27,7 +26,6 @@
             width: 90%;
             max-width: 700px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            filter: none; /* Відновлює чіткість для контенту */
         }
         h1 {
             font-size: 24px;
@@ -78,7 +76,122 @@
 <body>
 
 <div class="content">
-    <h1>Для отримання завдання введіть музичну відповідь</h1>
+    <h1>Для отримання завдання введіть вашу правильну відповідь</h1>
+    <input type="password" id="password" placeholder="Пароль">
+    <button onclick="checkPassword()">Відкрити завдання</button>
+
+    <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=0&modestbranding=1" allowfullscreen></iframe>
+
+    <div class="task" id="task" style="display: none;">
+        <h3>Тиждень 1: “Командний Коктейль”</h3>
+        <h4>Тема: Ігри для розвитку командного духу.</h4>
+        <p><strong>Завдання:</strong> "Ігровий конструктор для своїх"</p>
+        <p>Ваша мета — показати гру, яка згуртує будь-яку команду аніматорів перед виходом до дітей або під час перерви.</p>
+        <h4>Що потрібно зробити:</h4>
+        <ul>
+            <li>Оберіть або придумайте гру на згуртованість (team building), яку ви можете провести всередині своєї команди (1-3 людини) або залучивши колег по центру.</li>
+            <li>Зніміть відео до 90 секунд: Покажіть саму гру в дії. Важливо продемонструвати не просто правила, а результат: як ви починаєте краще відчувати один одного, синхронізуватися та заряджатися спільною енергією.</li>
+        </ul>
+        <h4>Оцінюємо:</h4>
+        <ul>
+            <li>Оригінальність гри, вашу командну взаємодію та те, наскільки гра реально "вмикає" командний дух.</li>
+            <li>І відео.</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function checkPassword() {
+        var enteredPassword = document.getElementById('password').value;
+        if (enteredPassword === '1234') {
+            document.getElementById('task').style.display = 'block';
+            document.body.style.filter = 'none'; // Знімає замилення фону після правильного паролю
+        } else {
+            alert('Невірний пароль. Спробуйте ще раз!');
+        }
+    }
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квест на навчання</title>
+    <style>
+        body {
+            background-image: url('https://files.catbox.moe/l664m3.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            margin-top: 20px;
+            display: none;
+        }
+        .task {
+            margin-top: 30px;
+            text-align: left;
+            font-size: 18px;
+        }
+        .task h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .task ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Для отримання завдання введіть вашу правильну відповідь</h1>
     <input type="password" id="password" placeholder="Пароль">
     <button onclick="checkPassword()">Відкрити завдання</button>
 
