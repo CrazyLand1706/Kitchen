@@ -18,7 +18,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            filter: blur(3px); /* Додає легкий блюр фону */
+            filter: blur(3px); /* Розмиваємо тільки фон */
         }
         .content {
             padding: 30px;
@@ -27,7 +27,7 @@
             width: 90%;
             max-width: 700px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            filter: none; /* Відновлює чіткість для контенту */
+            filter: none; /* Відновлюємо чіткість для контенту */
         }
         h1 {
             font-size: 24px;
@@ -76,11 +76,6 @@
             margin: 10px 0;
             font-size: 18px;
         }
-        .task a {
-            color: #FFD700;
-            text-decoration: none;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -90,7 +85,7 @@
     <input type="password" id="password" placeholder="Пароль">
     <button onclick="checkPassword()">Відкрити завдання</button>
 
-    <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=1&modestbranding=1" allowfullscreen></iframe>
 
     <div class="task" id="task" style="display: none;">
         <h3>Тиждень 1: “Командний Коктейль”</h3>
@@ -107,8 +102,6 @@
             <li>Оригінальність гри, вашу командну взаємодію та те, наскільки гра реально "вмикає" командний дух.</li>
             <li>І відео.</li>
         </ul>
-        <h4>Переглянути відео на YouTube:</h4>
-        <p><a href="https://www.youtube.com/watch?v=LuzXr3He9NI" target="_blank">Перейдіть за посиланням</a></p>
     </div>
 </div>
 
