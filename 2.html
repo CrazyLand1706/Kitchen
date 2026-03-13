@@ -18,6 +18,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            filter: blur(4px); /* Замилює фон */
         }
         .content {
             padding: 30px;
@@ -26,8 +27,9 @@
             width: 90%;
             max-width: 700px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            filter: none; /* Відновлює чіткість для контенту */
         }
-        h1, h2 {
+        h1 {
             font-size: 24px;
             margin-bottom: 20px;
         }
@@ -76,14 +78,13 @@
 <body>
 
 <div class="content">
-    <h1>Щоб отримати завдання другого тижня введіть музичний пароль</h1>
-    <h2>Для отримання завдання введіть вашу правильну відповідь</h2>
+    <h1>Для отримання завдання введіть вашу правильну відповідь</h1>
     <input type="password" id="password" placeholder="Пароль">
     <button onclick="checkPassword()">Відкрити завдання</button>
 
     <iframe id="video" src="https://www.youtube.com/embed/LuzXr3He9NI?autohide=1&showinfo=0&controls=0&modestbranding=1" allowfullscreen></iframe>
 
-    <div class="task">
+    <div class="task" id="task" style="display: none;">
         <h3>Тиждень 1: “Командний Коктейль”</h3>
         <h4>Тема: Ігри для розвитку командного духу.</h4>
         <p><strong>Завдання:</strong> "Ігровий конструктор для своїх"</p>
@@ -105,7 +106,8 @@
     function checkPassword() {
         var enteredPassword = document.getElementById('password').value;
         if (enteredPassword === '1234') {
-            document.getElementById('video').style.display = 'block';
+            document.getElementById('task').style.display = 'block';
+            document.body.style.filter = 'none'; // Знімає замилення фону після правильного паролю
         } else {
             alert('Невірний пароль. Спробуйте ще раз!');
         }
