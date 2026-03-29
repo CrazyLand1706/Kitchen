@@ -1,177 +1,185 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Квест на навчання</title>
-    <style>
-        /* Розмивання фону */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://files.catbox.moe/l664m3.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            filter: blur(5px); /* Легке розмивання фону */
-            z-index: -1; /* Тримаємо фон позаду всього */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тиждень 1 — Командний Коктейль 🍸</title>
 
-        /* Основний контейнер */
-        body {
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+<style>
 
-        /* Контейнер для контенту */
-        .content {
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            width: 90%;
-            max-width: 700px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
+body {
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+}
 
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+/* ФОН */
+.background {
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("https://files.catbox.moe/l664m3.png") center/cover no-repeat;
+filter:blur(6px) brightness(0.6);
+z-index:-1;
+}
 
-        input[type="password"] {
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+/* КОНТЕЙНЕР */
+.container {
+max-width:800px;
+margin:auto;
+padding:30px 20px 60px;
+}
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 5px;
-        }
+/* ПАРОЛЬ */
+.login {
+background:rgba(0,0,0,0.7);
+padding:25px;
+border-radius:12px;
+margin-bottom:20px;
+}
 
-        /* Завдання */
-        .task {
-            margin-top: 30px;
-            text-align: left;
-            font-size: 18px;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.8); /* Темніша основа для контенту */
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #FFD700; /* Золоті акценти */
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Золотисте сяйво */
-        }
+input {
+width:100%;
+padding:12px;
+font-size:16px;
+border-radius:6px;
+border:none;
+margin-bottom:10px;
+}
 
-        .task h3 {
-            font-size: 26px;
-            margin-bottom: 15px;
-            color: #FFD700; /* Золотий колір для акценту */
-        }
+button {
+padding:12px 20px;
+border:none;
+background:#FFD700;
+color:black;
+font-weight:bold;
+border-radius:6px;
+cursor:pointer;
+}
 
-        .task h4 {
-            font-size: 22px;
-            margin-top: 15px;
-            color: #FFD700; /* Золотий акцент */
-        }
+/* ЗАВДАННЯ */
+.task {
+display:none;
+background:rgba(0,0,0,0.75);
+padding:30px;
+border-radius:14px;
+border:2px solid #FFD700;
+box-shadow:0 0 25px rgba(255,215,0,0.6);
+text-align:left;
+}
 
-        .task ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.task h1 {
+color:#FFD700;
+font-size:32px;
+text-align:center;
+}
 
-        .task li {
-            margin: 10px 0;
-            font-size: 18px;
-        }
+.task h2 {
+color:#FFD700;
+margin-top:20px;
+}
 
-        .task p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+.task p, .task li {
+font-size:18px;
+line-height:1.6;
+}
 
-        /* Відео */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Відношення сторін для відео (16:9) */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            width: 100%;
-            margin-top: 40px; /* Відступ для відео */
-            display: none; /* Відео спочатку приховано */
-        }
+/* ВІДЕО */
+.video {
+display:none;
+margin-top:40px;
+display:flex;
+justify-content:center;
+}
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+.video iframe {
+width:100%;
+max-width:400px; /* ВАЖЛИВО — щоб було вертикальне */
+aspect-ratio:9/16;
+border-radius:12px;
+border:none;
+}
 
-    </style>
+</style>
 </head>
+
 <body>
 
-<div class="background"></div> <!-- Фон з блюром -->
+<div class="background"></div>
 
-<div class="content">
-    <h1>Для отримання завдання введіть музичну відповідь</h1>
-    <input type="password" id="password" placeholder="Пароль">
-    <button onclick="checkPassword()">Відкрити завдання</button>
+<div class="container">
 
-    <div class="task" id="task" style="display: none;">
-        <h3>Тиждень 2: "Магія Сторітелінгу"</h3>
-        <h4>Тема: Інтерактивні історії та залучення дітей.</h4>
-        <p><strong>Завдання:</strong>  "Майстер залучення" </p>
-        <p>Тут ми перевіряємо вашу здатність тримати увагу дитини та робити її частиною сюжету.</p>
-        <h4>Що потрібно зробити:</h4>
-        <ul>
-            <li>Придумайте фрагмент інтерактивної історії.</li>
-            <li>Зніміть відео до 90 секунд: Ви розповідаєте цю історію, звертаючись до "уявної аудиторії" (або ваші напарники по команді грають роль дітей).</li>
-            <li>Головна умова: У вашій розповіді мають бути мінімум 3 моменти активного залучення (наприклад: діти мають щось прокричати, показати жестом або прийняти рішення за героя).</li>
-        </ul>
-        <h4>Оцінюємо:</h4>
-        <ul>
-            <li>Вашу дикцію, міміку та креативність методів, якими ви "втягуєте" слухача в сюжет.</li>
-        </ul>
-    </div>
+<!-- ПАРОЛЬ -->
+<div class="login" id="login">
+<h2>Для отримання завдання введіть вашу правильну відповідь</h2>
+<input type="password" id="password" placeholder="Пароль">
+<button onclick="checkPassword()">Відкрити завдання</button>
+</div>
 
-   <!-- Відео (YouTube Shorts) з вертикальним співвідношенням -->
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/tVOpcDdYZPY" allowfullscreen></iframe>
-    </div>
+<!-- ЗАВДАННЯ -->
+<div class="task" id="task">
+
+<h1>Тиждень 1: “Командний Коктейль 🍸”</h1>
+
+<h2>Тема:</h2>
+<p>Ігри для розвитку командного духу.</p>
+
+<h2>Завдання: "Ігровий конструктор для своїх"</h2>
+
+<p>
+Ваша мета — показати гру, яка згуртує будь-яку команду аніматорів перед виходом до дітей або під час перерви.
+</p>
+
+<h2>Що потрібно зробити:</h2>
+
+<ul>
+<li>
+Оберіть або придумайте гру на згуртованість (team building), яку ви можете провести всередині своєї команди (1-3 людини) або залучивши колег по центру.
+</li>
+
+<li>
+Зніміть відео до 90 секунд:  
+На початку представте команду — назва + коротко про кожного.
+</li>
+
+<li>
+Покажіть гру в дії — не тільки правила, а результат: синхронізація, енергія, взаємодія.
+</li>
+
+</ul>
+
+<h2>Оцінюємо:</h2>
+
+<p>
+Оригінальність гри, вашу командну взаємодію та те, наскільки гра реально <b>"вмикає" командний дух.</b>
+</p>
+
+</div>
+
+<!-- ВІДЕО -->
+<div class="video" id="video">
+<iframe src="https://www.youtube.com/embed/ED-I8WW0Xn0" allowfullscreen></iframe>
+</div>
+
 </div>
 
 <script>
-    function checkPassword() {
-        var enteredPassword = document.getElementById('password').value;
-        if (enteredPassword === '5149') {
-            document.getElementById('task').style.display = 'block';  // Показуємо завдання
-            document.getElementById('video-container').style.display = 'block'; // Показуємо відео
-            document.body.style.filter = 'none'; // Знімаємо замилення фону після правильного паролю
-        } else {
-            alert('Невірний пароль. Спробуйте ще раз!');
-        }
-    }
+
+function checkPassword(){
+let pass = document.getElementById("password").value.trim().toLowerCase();
+
+if(pass === "5149"){ // ← зміни пароль якщо треба
+document.getElementById("task").style.display = "block";
+document.getElementById("video").style.display = "flex";
+document.getElementById("login").style.display = "none";
+}else{
+alert("Невірний пароль");
+}
+}
+
 </script>
 
 </body>
