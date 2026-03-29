@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Тиждень 1 — Командний Коктейль 🍸</title>
+<title>Тиждень 2 — Магія Сторітелінгу ✨</title>
 
 <style>
 
@@ -26,7 +26,7 @@ filter:blur(6px) brightness(0.6);
 z-index:-1;
 }
 
-/* КОНТЕЙНЕР */
+/* КОНТЕНТ */
 .container {
 max-width:800px;
 margin:auto;
@@ -73,7 +73,6 @@ text-align:left;
 
 .task h1 {
 color:#FFD700;
-font-size:32px;
 text-align:center;
 }
 
@@ -89,14 +88,14 @@ line-height:1.6;
 
 /* ВІДЕО */
 .video {
-display:none; /* важливо */
+display:none;
 margin-top:40px;
 justify-content:center;
 }
 
 .video iframe {
 width:100%;
-max-width:400px; /* ВАЖЛИВО — щоб було вертикальне */
+max-width:400px;
 aspect-ratio:9/16;
 border-radius:12px;
 border:none;
@@ -121,31 +120,34 @@ border:none;
 <!-- ЗАВДАННЯ -->
 <div class="task" id="task">
 
-<h1>Тиждень 1: “Командний Коктейль 🍸”</h1>
+<h1>Тиждень 2: "Магія Сторітелінгу ✨"</h1>
 
 <h2>Тема:</h2>
-<p>Ігри для розвитку командного духу.</p>
+<p>Інтерактивні історії та залучення дітей.</p>
 
-<h2>Завдання: "Ігровий конструктор для своїх"</h2>
+<h2>Завдання: "Майстер залучення"</h2>
 
 <p>
-Ваша мета — показати гру, яка згуртує будь-яку команду аніматорів перед виходом до дітей або під час перерви.
+Тут ми перевіряємо вашу здатність тримати увагу дитини та робити її частиною сюжету.
 </p>
 
 <h2>Що потрібно зробити:</h2>
 
 <ul>
 <li>
-Оберіть або придумайте гру на згуртованість (team building), яку ви можете провести всередині своєї команди (1-3 людини) або залучивши колег по центру.
+Придумайте фрагмент інтерактивної історії.
 </li>
 
 <li>
-Зніміть відео до 90 секунд:  
-На початку представте команду — назва + коротко про кожного.
+Зніміть відео до <b>90 секунд</b>:  
+ви розповідаєте історію, звертаючись до "уявної аудиторії" (або команда грає дітей).
 </li>
 
 <li>
-Покажіть гру в дії — не тільки правила, а результат: синхронізація, енергія, взаємодія.
+Головна умова: мінімум <b>3 моменти залучення</b>:
+<br>— крик
+<br>— жест
+<br>— вибір за героя
 </li>
 
 </ul>
@@ -153,14 +155,14 @@ border:none;
 <h2>Оцінюємо:</h2>
 
 <p>
-Оригінальність гри, вашу командну взаємодію та те, наскільки гра реально <b>"вмикає" командний дух.</b>
+Вашу дикцію, міміку та креативність методів, якими ви "втягуєте" слухача в сюжет.
 </p>
 
 </div>
 
 <!-- ВІДЕО -->
 <div class="video" id="video">
-<iframe src="https://www.youtube.com/embed/ED-I8WW0Xn0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/tVOpcDdYZPY" allowfullscreen></iframe>
 </div>
 
 </div>
@@ -168,9 +170,9 @@ border:none;
 <script>
 
 function checkPassword(){
-let pass = document.getElementById("password").value.trim().toLowerCase();
+let pass = document.getElementById("password").value.trim();
 
-if(pass === "5149"){ // ← зміни пароль якщо треба
+if(pass === "5149"){
 document.getElementById("task").style.display = "block";
 document.getElementById("video").style.display = "flex";
 document.getElementById("login").style.display = "none";
