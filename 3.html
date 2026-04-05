@@ -3,102 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Тиждень 3 — Емоційна кухня</title>
+<title>Тиждень 3 — Емоційна кухня 💛</title>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial, sans-serif;
-color:white;
-text-align:center;
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+color: white;
+text-align: center;
 }
 
-/* ФОН */
-.background{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:url("https://files.catbox.moe/l664m3.png") center/cover no-repeat;
-filter:blur(6px) brightness(0.6);
-z-index:-1;
+.background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url("https://files.catbox.moe/l664m3.png") center/cover no-repeat;
+filter: blur(6px) brightness(0.6);
+z-index: -1;
 }
 
-/* КОНТЕНТ */
-.container{
-max-width:800px;
-margin:auto;
-padding:30px 20px 60px;
+.container {
+max-width: 800px;
+margin: auto;
+padding: 30px 20px 60px;
 }
 
-/* БЛОК ВВОДУ */
-.login{
-background:rgba(0,0,0,0.7);
-padding:25px;
-border-radius:12px;
-margin-bottom:20px;
+.login {
+background: rgba(0,0,0,0.7);
+padding: 25px;
+border-radius: 12px;
+margin-bottom: 20px;
 }
 
-input{
-width:100%;
-padding:12px;
-font-size:16px;
-border-radius:6px;
-border:none;
-margin-bottom:10px;
+input {
+width: 100%;
+padding: 12px;
+font-size: 16px;
+border-radius: 6px;
+border: none;
+margin-bottom: 10px;
+box-sizing: border-box;
 }
 
-button{
-padding:12px 20px;
-border:none;
-background:#FFD700;
-color:black;
-font-weight:bold;
-border-radius:6px;
-cursor:pointer;
+button {
+padding: 12px 20px;
+border: none;
+background: #FFD700;
+color: black;
+font-weight: bold;
+border-radius: 6px;
+cursor: pointer;
 }
 
-/* ЗАВДАННЯ */
-.task{
-display:none;
-background:rgba(0,0,0,0.75);
-padding:30px;
-border-radius:14px;
-border:2px solid #FFD700;
-box-shadow:0 0 25px rgba(255,215,0,0.6);
-text-align:left;
+.task {
+display: none;
+background: rgba(0,0,0,0.75);
+padding: 30px;
+border-radius: 14px;
+border: 2px solid #FFD700;
+box-shadow: 0 0 25px rgba(255,215,0,0.6);
+text-align: left;
 }
 
-.task h1{
-color:#FFD700;
-text-align:center;
-margin-top:0;
+.task h1 {
+color: #FFD700;
+text-align: center;
 }
 
-.task h2{
-color:#FFD700;
-margin-top:20px;
+.task h2 {
+color: #FFD700;
+margin-top: 20px;
 }
 
-.task p, .task li{
-font-size:18px;
-line-height:1.6;
+.task p, .task li {
+font-size: 18px;
+line-height: 1.6;
 }
 
-.video{
-display:none;
-margin-top:30px;
+.video {
+display: none;
+margin-top: 40px;
+justify-content: center;
 }
 
-.video iframe{
-width:100%;
-aspect-ratio:16/9;
-border:none;
-border-radius:10px;
+.video iframe {
+width: 100%;
+max-width: 400px;
+aspect-ratio: 9 / 16;
+border-radius: 12px;
+border: none;
 }
-
 </style>
 </head>
 
@@ -108,34 +104,32 @@ border-radius:10px;
 
 <div class="container">
 
-<div class="login">
+<div class="login" id="login">
 <h2>Для отримання завдання введіть вашу правильну відповідь</h2>
 <input type="password" id="password" placeholder="Пароль">
 <button onclick="checkPassword()">Відкрити завдання</button>
 </div>
 
 <div class="task" id="task">
-
-<h1>Тиждень 3: "Емоційна кухня"</h1>
+<h1>Тиждень 3: "Емоційна кухня 💛"</h1>
 
 <h2>Тема:</h2>
 <p>Техніки емоційної комунікації з дітьми.</p>
 
 <h2>Завдання: "Емоційний міст"</h2>
-
 <p>
 Завдання на вміння зчитувати стан дитини та правильно на нього реагувати.
 </p>
 
 <h2>Що потрібно зробити:</h2>
-
 <ul>
 <li>
-Розіграйте ситуацію всередині команди: один аніматор — "дитина" з певним емоційним станом (наприклад: боїться гучної музики або засмучена через програш), інший — аніматор, що застосовує техніку комунікації.
+Розіграйте ситуацію всередині команди: один аніматор — "дитина" з певним емоційним станом
+(наприклад: боїться гучної музики або засмучена через програш), інший — аніматор, що застосовує техніку комунікації.
 </li>
-
 <li>
-Зніміть відео до <b>90 секунд</b>: покажіть, як ви встановлюєте контакт. Використовуйте техніки:
+Зніміть відео до <b>90 секунд</b>: покажіть, як ви встановлюєте контакт.
+Використовуйте техніки:
 <br>— "рівень очей"
 <br>— активне слухання
 <br>— правильна інтонація
@@ -144,33 +138,29 @@ border-radius:10px;
 </ul>
 
 <h2>Оцінюємо:</h2>
-
 <p>
 Вашу щирість, вміння не "тиснути" на дитину та професійне використання психологічних прийомів комунікації.
 </p>
-
 </div>
 
 <div class="video" id="video">
-<iframe src="https://www.youtube.com/embed/LuzXr3He9NI" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/mev9fBIMC_M" allowfullscreen></iframe>
 </div>
 
 </div>
 
 <script>
-
-function checkPassword(){
+function checkPassword() {
 let pass = document.getElementById("password").value.trim().toLowerCase();
 
-if(pass === "почуття гумору"){
+if (pass === "талант") {
 document.getElementById("task").style.display = "block";
-document.getElementById("video").style.display = "block";
-document.querySelector(".login").style.display = "none";
-}else{
+document.getElementById("video").style.display = "flex";
+document.getElementById("login").style.display = "none";
+} else {
 alert("Невірний пароль");
 }
 }
-
 </script>
 
 </body>
