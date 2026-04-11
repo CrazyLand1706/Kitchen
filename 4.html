@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тиждень 4 — Секретний інгредієнт: Вітрина вражень 🎬</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+color: white;
+text-align: center;
+}
+
+.background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url("https://files.catbox.moe/l664m3.png") center/cover no-repeat;
+filter: blur(6px) brightness(0.6);
+z-index: -1;
+}
+
+.container {
+max-width: 800px;
+margin: auto;
+padding: 30px 20px 60px;
+}
+
+.login {
+background: rgba(0,0,0,0.7);
+padding: 25px;
+border-radius: 12px;
+margin-bottom: 20px;
+}
+
+input {
+width: 100%;
+padding: 12px;
+font-size: 16px;
+border-radius: 6px;
+border: none;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+
+button {
+padding: 12px 20px;
+border: none;
+background: #FFD700;
+color: black;
+font-weight: bold;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.task {
+display: none;
+background: rgba(0,0,0,0.75);
+padding: 30px;
+border-radius: 14px;
+border: 2px solid #FFD700;
+box-shadow: 0 0 25px rgba(255,215,0,0.6);
+text-align: left;
+}
+
+.task h1 {
+color: #FFD700;
+text-align: center;
+}
+
+.task h2 {
+color: #FFD700;
+margin-top: 20px;
+}
+
+.task p, .task li {
+font-size: 18px;
+line-height: 1.6;
+}
+
+.video {
+display: none;
+margin-top: 40px;
+justify-content: center;
+}
+
+.video iframe {
+width: 100%;
+max-width: 400px;
+aspect-ratio: 9 / 16;
+border-radius: 12px;
+border: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<div class="login" id="login">
+<h2>Для отримання завдання введіть вашу правильну відповідь</h2>
+<input type="password" id="password" placeholder="Код">
+<button onclick="checkPassword()">Відкрити завдання</button>
+</div>
+
+<div class="task" id="task">
+<h1>Тиждень 4: "Секретний інгредієнт: Вітрина вражень 🎬"</h1>
+
+<h2>Тема:</h2>
+<p>Креативна відео-презентація програми.</p>
+
+<h2>Завдання: "Тизер програми"</h2>
+<p>
+Це ваш фінальний іспит. Ви — не просто аніматори, ви — обличчя бренду нашого центру. І ваше завдання — показати це у відео.
+</p>
+
+<h2>Що потрібно зробити:</h2>
+<ul>
+<li>
+Оберіть одну програму вашого центру, яку ви любите найбільше або проводите найкраще.
+</li>
+<li>
+Створіть коротке відео <b>20–40 секунд</b> у форматі тизера-презентації цієї програми.
+</li>
+<li>
+Ваше відео має містити:
+<br>— вас у образі або з реквізитом програми;
+<br>— мінімум одну фішку або "родзинку" програми, яку хочеться побачити живцем;
+<br>— динамічний монтаж або музику, що підсилює настрій.
+</li>
+</ul>
+
+<h2>Оцінюємо:</h2>
+<p>
+Подачу та харизму в кадрі, креативність та динаміку відео, відповідність стилю та духу бренду центру.
+</p>
+</div>
+
+<div class="video" id="video">
+<iframe src="https://www.youtube.com/embed/YJ4Gc4jJ1Bo" allowfullscreen></iframe>
+</div>
+
+</div>
+
+<script>
+function checkPassword() {
+let pass = document.getElementById("password").value.trim();
+
+if (pass === "2016") {
+document.getElementById("task").style.display = "block";
+document.getElementById("video").style.display = "flex";
+document.getElementById("login").style.display = "none";
+} else {
+alert("Невірний код");
+}
+}
+</script>
+
+</body>
+</html>
